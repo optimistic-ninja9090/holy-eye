@@ -1,1 +1,6 @@
 # holy-eye
+
+## Dependencies:
+
+
+## core
