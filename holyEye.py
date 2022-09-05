@@ -50,4 +50,4 @@ hostname = socket.gethostname()
 print("Hostname: " + hostname)
 
 ip = get('https://api.ipify.org').content.decode('utf8')
-print('public IP : {}'.format(ip))
+print('Public IP : {}'.format(ip))
