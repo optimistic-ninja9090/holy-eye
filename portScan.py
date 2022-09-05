@@ -1,6 +1,7 @@
 import pyfiglet
 import sys
 import socket
+import os
 from datetime import datetime
   
 ascii_banner = pyfiglet.figlet_format("Holy Eye")
@@ -42,3 +43,5 @@ except socket.gaierror:
 except socket.error:
         print("\ Server not responding !!!!")
         sys.exit()
+
+os.system("arp -a") 
