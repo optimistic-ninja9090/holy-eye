@@ -2,6 +2,7 @@ import pyfiglet
 import sys
 import socket
 import os
+from requests import get
 from datetime import datetime
   
 ascii_banner = pyfiglet.figlet_format("Holy Eye")
@@ -45,3 +46,8 @@ except socket.error:
         sys.exit()
 
 os.system("arp -a") 
+hostname = socket.gethostname()   
+print("Hostname: " + hostname)
+
+ip = get('https://api.ipify.org').content.decode('utf8')
+print('public IP : {}'.format(ip))
