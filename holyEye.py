@@ -7,7 +7,7 @@ from datetime import datetime
   
 ascii_banner = pyfiglet.figlet_format("Holy Eye")
 print(ascii_banner)
-target = input("Enter the host:")  
+target = input("Enter the host: ")  
 # Defining a target
 # if len(sys.argv) == 2:
      
@@ -19,7 +19,7 @@ target = input("Enter the host:")
 # Add Banner
 print("-" * 50)
 print("Scanning Target: " + target)
-print("Scanning started at:" + str(datetime.now()))
+print("Scanning started at: " + str(datetime.now()))
 print("-" * 50)
   
 try:
@@ -50,4 +50,4 @@ hostname = socket.gethostname()
 print("Hostname: " + hostname)
 
 ip = get('https://api.ipify.org').content.decode('utf8')
-print('Public IP : {}'.format(ip))
+print('Public IP: {}'.format(ip))
