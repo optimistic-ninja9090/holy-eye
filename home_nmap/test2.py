@@ -1,20 +1,23 @@
 import pyfiglet
 import sys
 import socket
-import os
-import nmap
-from requests import get
 from datetime import datetime
   
-ascii_banner = pyfiglet.figlet_format("Holy Eye")
+ascii_banner = pyfiglet.figlet_format("PORT SCANNER")
 print(ascii_banner)
-target = input("Enter the host: ")  
-
+  
+# Defining a target
+if len(sys.argv) == 2:
+     
+    # translate hostname to IPv4
+    target = socket.gethostbyname(sys.argv[1])
+else:
+    print("Invalid amount of Argument")
  
 # Add Banner
 print("-" * 50)
 print("Scanning Target: " + target)
-print("Scanning started at: " + str(datetime.now()))
+print("Scanning started at:" + str(datetime.now()))
 print("-" * 50)
   
 try:
@@ -39,11 +42,3 @@ except socket.gaierror:
 except socket.error:
         print("\ Server not responding !!!!")
         sys.exit()
-
-os.system("arp -a") 
-hostname = socket.gethostname()   
-print("Hostname: " + hostname)
-
-#ipify; will fail if no internet connection
-ip = get('https://api.ipify.org').content.decode('utf8')
-print('Public IP: {}'.format(ip))
