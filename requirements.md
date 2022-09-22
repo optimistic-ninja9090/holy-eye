@@ -1,0 +1,15 @@
+rich
+setuptools
+diagrams
+build
+uvicorn
+lxml
+requests
+cpe
+packaging
+pep517
+tomli
+wheel
+pydantic
+fastapi_simple_security
+fastapi
