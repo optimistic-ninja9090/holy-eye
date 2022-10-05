@@ -1,6 +1,6 @@
-# Nmap 7.92 scan initiated Mon Sep 19 20:55:54 2022 as: nmap -sV -sC -oA 127.0.0.1 127.0.0.1
+# Nmap 7.92 scan initiated Wed Oct  5 18:05:25 2022 as: nmap -sV -sC -oA 127.0.0.1 127.0.0.1
 Nmap scan report for localhost (127.0.0.1)
-Host is up (0.000044s latency).
+Host is up (0.000041s latency).
 Not shown: 999 closed tcp ports (conn-refused)
 PORT   STATE SERVICE VERSION
 25/tcp open  smtp    OpenSMTPD
@@ -9,4 +9,4 @@ PORT   STATE SERVICE VERSION
 Service Info: Host: ath3na
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Mon Sep 19 20:55:54 2022 -- 1 IP address (1 host up) scanned in 0.37 seconds
+# Nmap done at Wed Oct  5 18:05:25 2022 -- 1 IP address (1 host up) scanned in 0.34 seconds
