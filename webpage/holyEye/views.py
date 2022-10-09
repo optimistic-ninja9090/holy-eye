@@ -3,16 +3,16 @@ from django.http import HttpResponse
 
 # Create your views here.
 def home(request):
-    return render(request, 'holyEye/home.html')
+    return render(request, "main/home.html")
 
 def about(request):
-    return render(request, 'holyEye/about.html')
+    return render(request, "main/about.html")
 
 def page1(request):
-    return render(request, 'holyEye/page1.html')
+    return render(request, "main/page1.html")
 
 def page2(request):
-    return render(request, 'holyEye/page2.html')
+    return render(request, "main/page2.html")
 
 def page3(request):
-    return render(request, 'holyEye/page3.html')
+    return render(request, "main/page3.html")
