@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 echo "Type of scan (1-5)
 1. Vulnerability
 2. Quick
@@ -55,9 +54,7 @@ case $SCANTYPE in
 #UDP SCAN
 4) nmap -sS -sV -Pn -p$PORT1-$PORT2 $IPADDR
 ;;
-#SYN SCAN
-5) nmap -sS -sV -Pn -p$PORT1-$PORT2 $IPADDR
-;;
+
 esac
 
 echo "Scanning $IPADDR"

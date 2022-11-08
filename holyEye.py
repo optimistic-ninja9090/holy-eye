@@ -6,44 +6,39 @@ import nmap
 from requests import get
 from datetime import datetime
   
-ascii_banner = pyfiglet.figlet_format("Holy Eye")
-print(ascii_banner)
-target = input("Enter the host: ")  
+# ipaddr = input("Enter the IP address: ")
 
- 
-# Add Banner
-print("-" * 50)
-print("Scanning Target: " + target)
-print("Scanning started at: " + str(datetime.now()))
-print("-" * 50)
-  
-try:
-     
-    # will scan ports between 1 to 65,535
-    for port in range(1,65535):
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        socket.setdefaulttimeout(1)
-         
-        # returns an error indicator
-        result = s.connect_ex((target,port))
-        if result ==0:
-            print("Port {} is open".format(port))
-        s.close()
-         
-except KeyboardInterrupt:
-        print("\n Exiting Program !!!!")
-        sys.exit()
-except socket.gaierror:
-        print("\n Hostname Could Not Be Resolved !!!!")
-        sys.exit()
-except socket.error:
-        print("\ Server not responding !!!!")
-        sys.exit()
+# optports = input(" 1. Scan all ports \n 2. Scan specific ports")
 
-os.system("arp -a") 
-hostname = socket.gethostname()   
-print("Hostname: " + hostname)
+# optscan = input(" 1. Vulnerability Scan \n 2. Quick Scan")
 
-#ipify; will fail if no internet connection
-ip = get('https://api.ipify.org').content.decode('utf8')
-print('Public IP: {}'.format(ip))
+def vulnerability_scan():
+        scan = os.system("nmap -sV --script vulners --script-args mincvss=5.0 192.168.0.106")
+        return scan
+
+def quick_scan():
+        quick = os.system("nmap -sS -sV -Pn -T4 192.168.0.106")
+        return quick
+
+
+# def main():
+#      if optscan == "1":
+#         vulnerability_scan()
+#      elif optscan == "2":
+#         quick_scan()
+#      else:
+#         print("Invalid option")
+#         main()
+
+
+
+# def option():
+#     if optports == "1":
+#         print("Scanning all ports")
+#         scanall()
+#     elif optports == "2":
+#         print("Scanning specific ports")
+#         scanports()
+#     else:
+#         print("Invalid option")
+#         option()
