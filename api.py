@@ -12,7 +12,7 @@ app = FastAPI()
 # Vulnerability Scan
 @app.get("/vulnerability")
 async def vulnerability_api():
-    cmd = "nmap -sV --script vulners --script-args mincvss=5.0 192.168.0.106"
+    cmd = "nmap -sV -oG --script vulners --script-args mincvss=5.0 192.168.0.106"
     returned_output = subprocess.check_output(cmd, shell=True)
     return returned_output.decode("utf-8")
 
@@ -20,7 +20,7 @@ async def vulnerability_api():
 # Quick Scan
 @app.get("/quick")
 async def quick_api():
-    cmd = "nmap -sS -sV -Pn -T4 192.168.0.106"
+    cmd = "nmap -sS -oG -sV -Pn -T4 192.168.0.106"
     returned_output = subprocess.check_output(cmd, shell=True)
     return returned_output.decode("utf-8")
 
